@@ -3,15 +3,19 @@ buildscript {
         // These repositories are only for Gradle plugins, put any other repositories in the repository block further below
         maven { url = 'https://maven.minecraftforge.net' }
         mavenCentral()
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/'}
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath 'org.spongepowered:mixingradle:0.7.+'
+
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
+apply plugin: 'org.spongepowered.mixin'
 
 version = '1.0'
 group = 'com.yourname.modid' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
@@ -115,13 +119,13 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-    // Put repositories for dependencies here
-    // ForgeGradle automatically adds the Forge maven and Maven Central for you
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
 
-    // If you have mod jar dependencies in ./libs, you can declare them as a repository like so:
-    // flatDir {
-    //     dir 'libs'
-    // }
 }
 
 dependencies {
@@ -129,8 +133,14 @@ dependencies {
     // that the dep is a ForgeGradle 'patcher' dependency, and its patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft 'net.minecraftforge:forge:1.18.1-39.0.59'
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
-    // Real mod deobf dependency examples - these get remapped to your current mappings
+//    implementation fg.deobf("curse.maven:quark-243121:3578106")
+    implementation fg.deobf("curse.maven:flywheel-486392:3623314")
+    implementation fg.deobf("curse.maven:create-328085:3623348")
+
+
+        // Real mod deobf dependency examples - these get remapped to your current mappings
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
     // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}") // Adds the full JEI mod as a runtime dependency
     // implementation fg.deobf("com.tterrag.registrate:Registrate:MC${mc_version}-${registrate_version}") // Adds registrate as a dependency

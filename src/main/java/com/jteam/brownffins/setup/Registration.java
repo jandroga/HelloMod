@@ -1,5 +1,6 @@
 package com.jteam.brownffins.setup;
 
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -27,6 +28,10 @@ public class Registration {
 
     public static final RegistryObject<Item> BROWNFFIN = ITEMS.register("brownffin",() -> new Item(ITEM_PROPERTIES));
 
+
+    public static RegistryObject<Item> fromBlock(RegistryObject<Block> block){
+        return ITEMS.register(block.getId().getPath(), () -> new BlockItem(block.get(), ITEM_PROPERTIES));
+    }
 
 
 }

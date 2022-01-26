@@ -13,5 +13,9 @@ public class Datagen {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event){
         DataGenerator datagenerator = event.getGenerator();
+
+        if(event.includeClient()){
+//            datagenerator.addProvider();
+        }
     }
 }

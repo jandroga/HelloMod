@@ -25,7 +25,7 @@ public class Registration {
     public static final Item.Properties ITEM_PROPERTIES = new Item.Properties().tab(ModSetup.TAB_GROUP);
 
 
-    public static final RegistryObject<Item> BROWNFFIN = ITEMS.register("Brownffin",() -> new Item(ITEM_PROPERTIES));
+    public static final RegistryObject<Item> BROWNFFIN = ITEMS.register("brownffin",() -> new Item(ITEM_PROPERTIES));
 
 
 

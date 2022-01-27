@@ -15,7 +15,8 @@ public class Datagen {
         DataGenerator datagenerator = event.getGenerator();
 
         if(event.includeClient()){
-//            datagenerator.addProvider();
+            datagenerator.addProvider(new TutBlockStates(datagenerator, event.getExistingFileHelper()));
+            datagenerator.addProvider(new TutItemModels(datagenerator, event.getExistingFileHelper()));
         }
     }
 }

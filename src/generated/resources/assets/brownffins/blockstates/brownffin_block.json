@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "brownffins:block/brownffin_block"
+    }
+  }
+}

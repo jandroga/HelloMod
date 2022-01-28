@@ -6,7 +6,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 public class ModSetup {
 
-    public static final String TAB = "Brownffins";
+    public static final String TAB = "brownffins";
     public static final CreativeModeTab TAB_GROUP = new CreativeModeTab(TAB) {
         @Override
         public ItemStack makeIcon() {

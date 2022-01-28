@@ -15,8 +15,6 @@ public class TutBlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-
-        simpleBlock(Registration.BROWNFFIN.get());
-
+        simpleBlock(Registration.BROWNFFIN_BLOCK.get());
     }
 }

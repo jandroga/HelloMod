@@ -20,8 +20,8 @@ public class TutItemModels extends ItemModelProvider {
         withExistingParent(Registration.BROWNFFIN_ORE_CHOCO_ITEM.get().getRegistryName().getPath(), modLoc("block/brownffin_ore_choco"));
         withExistingParent(Registration.BROWNFFIN_ORE_MASA_ITEM.get().getRegistryName().getPath(), modLoc("block/brownffin_ore_masa"));
          */
-        withExistingParent(Registration.BROWNFFIN.get().getRegistryName().getPath(),
-                modLoc("item/brownffin"));
+        singleTexture(Registration.BROWNFFIN.get().getRegistryName().getPath(), mcLoc("item/generated"), "layer0", modLoc("item/brownffin"));
+        withExistingParent(Registration.BROWNFFIN_BLOCK_ITEM.get().getRegistryName().getPath(), modLoc("block/brownffin_block"));
 
     }
 }

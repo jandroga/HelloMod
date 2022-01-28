@@ -18,5 +18,7 @@ public class TutBlockTags extends BlockTagsProvider {
         .add(Registration.BROWNFFINS_ORE_CHOCO.get())
         .add(Registration.BROWNFFINS_ORE_MASA.get());
          */
+
+         //CodeTogether
     }
 }

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "brownffins",
+  "pattern": [
+    "mmm",
+    "mmm",
+    "mmm"
+  ],
+  "key": {
+    "m": {
+      "item": "brownffins:brownffin"
+    }
+  },
+  "result": {
+    "item": "brownffins:brownffin_block"
+  }
+}
